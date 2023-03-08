@@ -1,0 +1,54 @@
+Package: o3163030000646776106507162760542132244575553
+Type: Package
+Title: Enumerate Repeated Values
+Version: 2023.03-08
+Date: 2023-03-08
+Author: D. Michael Parrish [aut]
+Maintainer: Neat O <neatoverse@yahoo.com>
+Description:
+    Given a `logical`, `integer`, `double`, or `character`
+    vector, returns an integer vector enumerating repeated
+    values.
+        This file is
+    o3163030000646776106507162760542132244575553/DESCRIPTION
+License: AGPL-3
+Encoding: UTF-8
+Installation: To install, copy this package, including its
+    containing subdirectory, to a known directory. The
+    subdirectory should be named
+    o3163030000646776106507162760542132244575553
+    to be consistent with the design of this package.
+section---HELP:
+    ============================================================
+help---Usage:
+    ------------------------------------------------------------
+                #   Replace "pathname" with the pathname to the
+                #   installation subdirectory.
+    pathname <- "pathname"
+    enumerateRepeatedValues <- source(paste0(
+        pathname, "/enumerateRepeatedValues.R"))[[1]]
+    enumerateRepeatedValues(X)
+help---Arguments:
+    ------------------------------------------------------------
+    X:  A vector
+help---Details:
+    ------------------------------------------------------------
+        If the argument is not a `logical`, `integer`, `double`,
+        or `character` vector of finite values, expect strange
+        results.
+            Internally, uses `is.sorted`, `order`, and
+        `duplicated` to analyze the argument.
+help---Examples:
+                #   Replace "pathname" with the pathname to the
+                #   installation subdirectory.
+    pathname <- "pathname"
+    enumerateRepeatedValues <- source(paste0(
+        pathname, "/enumerateRepeatedValues.R"))[[1]]
+    h <- c("2", "3", "3", "4", "4", "5")
+    d <- as.double(h)
+    i <- as.integer(h)
+    l <- as.logical(as.integer(x))
+    data.frame(h, num = enumerateRepeatedValues(h))
+    data.frame(d, num = enumerateRepeatedValues(d))
+    data.frame(i, num = enumerateRepeatedValues(i))
+    data.frame(l, num = enumerateRepeatedValues(l))
